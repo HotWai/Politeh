@@ -23,4 +23,7 @@ int main()
 		// И заставим указатель показывать на неё
 		node = newNode;
 	}
+
+	system("pause");
+	return 0;
 }

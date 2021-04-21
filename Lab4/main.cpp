@@ -57,4 +57,7 @@ int main()
 	cout << "По убыванию:\n";
 
 	print(mass, n);
+
+	system("pause");
+	return 0;
 }
