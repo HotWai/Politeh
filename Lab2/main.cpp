@@ -1,9 +1,9 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 using namespace std;
 
 
-// Показывает, что должно быть в ячейке массива: буква, цифра или символ
+// РџРѕРєР°Р·С‹РІР°РµС‚, С‡С‚Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РІ СЏС‡РµР№РєРµ РјР°СЃСЃРёРІР°: Р±СѓРєРІР°, С†РёС„СЂР° РёР»Рё СЃРёРјРІРѕР»
 enum Type
 {
 	Letter,
@@ -13,20 +13,20 @@ enum Type
 };
 
 
-const int minLettersCount = 3; // Минимальное кол-во букв
-const int minNumbersCount = 2; // Минимальное кол-во цифр
-const int minSymbolsCount = 1; // Минимальное кол-во симфолов
+const int minLettersCount = 3; // РњРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ Р±СѓРєРІ
+const int minNumbersCount = 2; // РњРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ С†РёС„СЂ
+const int minSymbolsCount = 1; // РњРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ СЃРёРјС„РѕР»РѕРІ
 
  
-const int minLength = minLettersCount + minNumbersCount + minSymbolsCount; // Минимальная длина пароля
+const int minLength = minLettersCount + minNumbersCount + minSymbolsCount; // РњРёРЅРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР° РїР°СЂРѕР»СЏ
 
- // Эти переменные нужны, чтобы указать с какой вероятность у нас в ячейке будет буква, цифра или символ
+ // Р­С‚Рё РїРµСЂРµРјРµРЅРЅС‹Рµ РЅСѓР¶РЅС‹, С‡С‚РѕР±С‹ СѓРєР°Р·Р°С‚СЊ СЃ РєР°РєРѕР№ РІРµСЂРѕСЏС‚РЅРѕСЃС‚СЊ Сѓ РЅР°СЃ РІ СЏС‡РµР№РєРµ Р±СѓРґРµС‚ Р±СѓРєРІР°, С†РёС„СЂР° РёР»Рё СЃРёРјРІРѕР»
 const int lettersWeight = 4;
 const int numbersWeight = 2;
 const int symbolsWeight = 1;
 
 
-// Заполнить минимальным количеством букв, цифр или символов(смотря какой fillType будет указан)
+// Р—Р°РїРѕР»РЅРёС‚СЊ РјРёРЅРёРјР°Р»СЊРЅС‹Рј РєРѕР»РёС‡РµСЃС‚РІРѕРј Р±СѓРєРІ, С†РёС„СЂ РёР»Рё СЃРёРјРІРѕР»РѕРІ(СЃРјРѕС‚СЂСЏ РєР°РєРѕР№ fillType Р±СѓРґРµС‚ СѓРєР°Р·Р°РЅ)
 void FillMin(Type* passwordTypes, int length, int min, Type fillType)
 {
 	for (int i = 0; i < min; i++)
@@ -42,7 +42,7 @@ void FillMin(Type* passwordTypes, int length, int min, Type fillType)
 	}
 }
 
-// Получить случайный тип
+// РџРѕР»СѓС‡РёС‚СЊ СЃР»СѓС‡Р°Р№РЅС‹Р№ С‚РёРї
 Type GetRandomType()
 {
 	int x = rand() % lettersWeight + numbersWeight + symbolsWeight + 1;
@@ -59,7 +59,7 @@ Type GetRandomType()
 	return Symbol;
 }
 
-// Получить букву
+// РџРѕР»СѓС‡РёС‚СЊ Р±СѓРєРІСѓ
 char GetRandomLetter()
 {
 	char letter;
@@ -76,13 +76,13 @@ char GetRandomLetter()
 
 	return letter;
 }
-// Получить цифру
+// РџРѕР»СѓС‡РёС‚СЊ С†РёС„СЂСѓ
 char GetRandomNumber()
 {
 	char number = '0' + rand() % 10;
 	return number;
 }
-// Получить символ
+// РџРѕР»СѓС‡РёС‚СЊ СЃРёРјРІРѕР»
 char GetRandomSymbol()
 {
 	char symbols[] = "~!@#$%^&*?";
@@ -100,7 +100,7 @@ int main()
 
 	while (true)
 	{
-		cout << "Укажите длину пароля: ";
+		cout << "РЈРєР°Р¶РёС‚Рµ РґР»РёРЅСѓ РїР°СЂРѕР»СЏ: ";
 		cin >> length;
 
 		if (length >= minLength)
@@ -109,26 +109,26 @@ int main()
 		}
 		else
 		{
-			cout << "Некорректный ввод!" << endl;
+			cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << endl;
 		}
 	}
-	// Создаём массив, длина которого, такая же как и у пароля
+	// РЎРѕР·РґР°С‘Рј РјР°СЃСЃРёРІ, РґР»РёРЅР° РєРѕС‚РѕСЂРѕРіРѕ, С‚Р°РєР°СЏ Р¶Рµ РєР°Рє Рё Сѓ РїР°СЂРѕР»СЏ
 	Type* passwordTypes = new Type[length];
 
-	// Указываем в каждой ячейке неопределённый тип
+	// РЈРєР°Р·С‹РІР°РµРј РІ РєР°Р¶РґРѕР№ СЏС‡РµР№РєРµ РЅРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Р№ С‚РёРї
 	for (int i = 0; i < length; i++)
 	{
 		passwordTypes[i] = NotYetDetermined;
 	}
-	// Помещаем в неопределённые ячейки минимальное кол-во букв
+	// РџРѕРјРµС‰Р°РµРј РІ РЅРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Рµ СЏС‡РµР№РєРё РјРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ Р±СѓРєРІ
 	FillMin(passwordTypes, length, minLettersCount, Letter);
-	// Помещаем в неопределённые ячейки минимальное кол-во цифр
+	// РџРѕРјРµС‰Р°РµРј РІ РЅРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Рµ СЏС‡РµР№РєРё РјРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ С†РёС„СЂ
 	FillMin(passwordTypes, length, minNumbersCount, Number);
-	// Помещаем в неопределённые ячейки минимальное кол-во символов
+	// РџРѕРјРµС‰Р°РµРј РІ РЅРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Рµ СЏС‡РµР№РєРё РјРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ СЃРёРјРІРѕР»РѕРІ
 	FillMin(passwordTypes, length, minSymbolsCount, Symbol);
 
 
-	// Оставшимя неопределённым ячейчкам присваиваем случайный тип
+	// РћСЃС‚Р°РІС€РёРјСЏ РЅРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Рј СЏС‡РµР№С‡РєР°Рј РїСЂРёСЃРІР°РёРІР°РµРј СЃР»СѓС‡Р°Р№РЅС‹Р№ С‚РёРї
 	for (int i = 0; i < length; i++)
 	{
 		if (passwordTypes[i] == NotYetDetermined)
@@ -137,7 +137,7 @@ int main()
 		}
 	}
 
-	// Создаём пароль
+	// РЎРѕР·РґР°С‘Рј РїР°СЂРѕР»СЊ
 	string password = "";
 
 	for (int i = 0; i < length; i++)

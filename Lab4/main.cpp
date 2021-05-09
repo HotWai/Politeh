@@ -1,7 +1,7 @@
-#include <iostream>
+п»ї#include <iostream>
 using namespace std;
 
-// Если descending = true, то идёт сортировка по убыванию
+// Р•СЃР»Рё descending = true, С‚Рѕ РёРґС‘С‚ СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СѓР±С‹РІР°РЅРёСЋ
 void sort(double* mass, int length, bool descending)
 {
 	for (int i = 0; i < length - 1; i++)
@@ -20,7 +20,7 @@ void sort(double* mass, int length, bool descending)
 	}
 }
 
-// Отображает массив
+// РћС‚РѕР±СЂР°Р¶Р°РµС‚ РјР°СЃСЃРёРІ
 void print(double* mass, int length)
 {
 	for (int i = 0; i < length; i++)
@@ -32,13 +32,13 @@ void print(double* mass, int length)
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	cout << "Укажите количество чисел: ";
+	cout << "РЈРєР°Р¶РёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР»: ";
 	int n;
 	cin >> n;
 
 	double* mass = new double[n];
 
-	cout << "Введите числа:\n";
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Р°:\n";
 
 	for (int i = 0; i < n; i++)
 	{
@@ -48,13 +48,13 @@ int main()
 	sort(mass, n, false);
 
 	cout << endl << endl;
-	cout << "По возрастанию:\n";
+	cout << "РџРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ:\n";
 	print(mass, n);
 
 	sort(mass, n, true);
 
 	cout << endl << endl;
-	cout << "По убыванию:\n";
+	cout << "РџРѕ СѓР±С‹РІР°РЅРёСЋ:\n";
 
 	print(mass, n);
 
